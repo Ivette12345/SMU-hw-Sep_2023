@@ -1,0 +1,47 @@
+#  Exported from QuickDBD: https://www.quickdatabasediagrams.com/
+#  NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
+
+"departments"
+--
+"dept_no" char(5) pk
+"dept_name" varchar(40)
+"last_updated" timestamp
+
+"dept_manager"
+--
+dept_manager_id serial PK
+"dept_no" char(5) FK >- "departments"."dept_no"
+"emp_no" int FK >- "employees"."emp_no"
+"last_updated" timestamp
+
+"dept_emp"
+--
+dept_emp_id serial PK
+"emp_no" int FK >- "employees"."emp_no"
+"dept_no" char(5) FK >- "departments"."dept_no"
+"last_updated" timestamp
+
+"employees"
+--
+"emp_no" integer pk
+"emp_title_id" char(5) FK >- "titles"."title_id"
+"birth_date" date
+"first_name" varchar(20)
+"last_name" varchar(20)
+"sex" char(1)
+"hire_date" date
+"last_updated" timestamp
+
+"salaries"
+--
+salary_id serial PK
+"emp_no" int FK >- "employees"."emp_no"
+"salary" int
+"last_updated" timestamp
+
+"titles"
+--
+"title_id" char(5) pk
+"title" varchar(50)
+"last_updated" timestamp
+
