@@ -35,3 +35,11 @@ print(f"Total Votes: {total_votes}")
 for candidate, percentage, votes in results:
     print(f"{candidate}: {percentage:.3f}% ({votes})")
 print(f"Winner: {winner[0]}")
+
+#Write results to txt file
+with open('Resources/election_data.txt','w') as txtfile:
+    txtfile.write("Election Results\n")
+    txtfile.write(f"Total Votes: {total_votes}\n")
+    for candidate, percentage, votes in results:
+        txtfile.write(f"{candidate}: {percentage:.3f}% ({votes})\n")
+    txtfile.write(f"Winner: {winner[0]}\n")

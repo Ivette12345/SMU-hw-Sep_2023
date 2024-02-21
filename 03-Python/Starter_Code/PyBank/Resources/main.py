@@ -45,4 +45,11 @@ print(f"Average Change: ${average_change:.2f}")
 print(f"Greatest Increase in Profits: {greatest_increase_date} (${greatest_increase})")
 print(f"Greatest Decrease in Profits: {greatest_decrease_date} (${greatest_decrease})")
 
-       
+#write results to txt file
+with open('Resources/budget_data.txt','w') as txtfile:  
+    txtfile.write("Budget Analysis\n")
+    txtfile.write(f"Total Months: {total_months}\n")
+    txtfile.write(f"Net Total: ${net_total}\n")
+    txtfile.write(f"Average Change: ${average_change:.2f}\n")
+    txtfile.write(f"Greatest Increase in Profits: {greatest_increase_date} (${greatest_increase})\n")
+    txtfile.write(f"Greatest Decrease in Profits: {greatest_decrease_date} (${greatest_decrease})\n")
